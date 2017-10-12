@@ -54,6 +54,7 @@ public class DBhelper extends SQLiteOpenHelper
     {
         SQLiteDatabase db = this.getWritableDatabase();
         Log.d("from DBhalper.DeletProduct","going to delete "+ID);
+
         r = GetWordByID(ID);
         if(r.getCount()!=0)
         {
@@ -65,6 +66,13 @@ public class DBhelper extends SQLiteOpenHelper
         }
 
 
+    }
+
+    public Cursor GetNrOfWords()
+    {
+        SQLiteDatabase db = this.getWritableDatabase();
+        Cursor result= db.rawQuery("SELECT count(*) FROM "+TABLE_NAME,null);
+        return result;
     }
     // todo ,Irada/ change/ con
     public void EditWordByID(int ID, String fr, String en,String domain)

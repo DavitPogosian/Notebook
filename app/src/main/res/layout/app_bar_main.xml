@@ -5,7 +5,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:fitsSystemWindows="true"
-    tools:context="com.example.davit.notebook.MainActivity">
+    tools:context="com.example.davit.notebook.MainActivity"
+    android:background="@drawable/back">
 
     <include layout="@layout/content_main" />
 
