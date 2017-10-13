@@ -8,10 +8,6 @@ import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
-import android.graphics.Bitmap;
-import android.util.Log;
-
-import java.io.ByteArrayOutputStream;
 
 public class DBhelper extends SQLiteOpenHelper
 {
@@ -26,12 +22,9 @@ public class DBhelper extends SQLiteOpenHelper
         SQLiteDatabase mydb=this.getWritableDatabase();
     }
 
-    @Override
-    public void onCreate(SQLiteDatabase db) { // todo irada /change/ en , fr and domain
-        db.execSQL("create table "+TABLE_NAME +" (ID integer primary key AUTOINCREMENT ," +
-                                                 " en TEXT , " +
-                                                "fr TEXT  ," +
-                                                 " domain TEXT");
+    @Override// todo irada /change/ en , fr and domain
+    public void onCreate(SQLiteDatabase db) {
+        db.execSQL("create table "+TABLE_NAME +" (ID integer primary key AUTOINCREMENT ,en TEXT , fr TEXT  ,domain TEXT)");
     }
 
 
@@ -49,11 +42,17 @@ public class DBhelper extends SQLiteOpenHelper
         Cursor result= db.rawQuery("Select * from "+TABLE_NAME+ " WHERE ID="+ID,null);
         return result;
     }
+    public Cursor GetAll()
+    {
+        SQLiteDatabase db = this.getWritableDatabase();
+        Cursor result= db.rawQuery("Select * from "+TABLE_NAME,null);
+        return result;
+    }
 
     public void DeletWord(int ID)
     {
         SQLiteDatabase db = this.getWritableDatabase();
-        Log.d("from DBhalper.DeletProduct","going to delete "+ID);
+        //Log.d("from DBhalper.DeletProduct","going to delete "+ID);
 
         r = GetWordByID(ID);
         if(r.getCount()!=0)
@@ -62,7 +61,7 @@ public class DBhelper extends SQLiteOpenHelper
         }
         else
         {
-            Log.d("from DBhalper.DeletProduct","r.getCount()= "+r.getCount());
+          //  Log.d("from DBhalper.DeletProduct","r.getCount()= "+r.getCount());
         }
 
 
@@ -93,14 +92,20 @@ public class DBhelper extends SQLiteOpenHelper
 
     }
 
-    public Cursor GetWordByLetterInFr(char letter)
+    public Cursor GetWordByLetterInFr(String letter)
     {
         SQLiteDatabase db = this.getWritableDatabase();
         Cursor result= db.rawQuery("Select * from "+TABLE_NAME+ " WHERE fr like'"+letter+"%'",null);
         return result;
 
     }
-    public Cursor GetWordByLetterInEn(char letter)
+    public Cursor Search(String request){
+        SQLiteDatabase db = this.getWritableDatabase();
+        Cursor result= db.rawQuery("Select * from "+TABLE_NAME+ " WHERE domain='"+request+"' or fr='"+request+"' or en ='"+request+"'",null);
+        return result;
+
+    }
+    public Cursor GetWordByLetterInEn(String letter)
     {
         SQLiteDatabase db = this.getWritableDatabase();
      //   SELECT * FROM Customers where CustomerName like 'a%';
@@ -109,7 +114,7 @@ public class DBhelper extends SQLiteOpenHelper
 
     }
 
-    public void AddWord(String fr, String en,String domain)
+    public boolean AddWord(String fr, String en,String domain)
     {
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues cont = new ContentValues();
@@ -117,6 +122,10 @@ public class DBhelper extends SQLiteOpenHelper
         cont.put("en", en);
         cont.put("domain", domain);
         long res = db.insert(TABLE_NAME, null, cont);
+        if (res==-1)
+          return   false;
+        else
+            return true;
 
     }
 
