@@ -67,6 +67,13 @@ public class AddActivity extends AppCompatActivity {
                 en.setText("");
                 dom.setText("");
             }
+            else
+            {
+                Toast toast = Toast.makeText(getApplicationContext(), "errore in adding", Toast.LENGTH_SHORT);
+                toast.show();
+
+            }
+
         }
 
     }

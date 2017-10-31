@@ -20,7 +20,7 @@ public class TestActivity extends AppCompatActivity {
     TextView fr2;
     TextView fr3;
     TextView fr4;
-    Button next;
+    Button next,back;
     Random r;
     int trueanswer;
     int wordID;
@@ -45,6 +45,7 @@ public class TestActivity extends AppCompatActivity {
         fr3=(TextView) findViewById(R.id.fr3);
         fr4=(TextView) findViewById(R.id.fr4);
         next=(Button) findViewById(R.id.next);
+        back=(Button) findViewById(R.id.back);
         Cursor res = mydb.GetNrOfWords();
         res.moveToFirst();
         Log.e("maximum nr","nr= "+res.getString(0));
@@ -127,6 +128,11 @@ public class TestActivity extends AppCompatActivity {
 
     }
 
+    public void Back (View v){
+        Intent go = new Intent(TestActivity.this, MainActivity.class);
+        startActivity(go);
+
+    }
     public void Check(View v)
     {
         fr1.setClickable(false);

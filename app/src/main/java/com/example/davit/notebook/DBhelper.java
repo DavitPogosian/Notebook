@@ -6,6 +6,7 @@ package com.example.davit.notebook;
 import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
+import android.database.SQLException;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
@@ -15,6 +16,7 @@ public class DBhelper extends SQLiteOpenHelper
     public static final String DB_NAME="notebook.db";
     public static final String TABLE_NAME="words";
     public  Cursor r=null;
+    private SQLiteDatabase db;
 
     public DBhelper(Context context) {
         super(context, DB_NAME, null, 1);
@@ -34,6 +36,38 @@ public class DBhelper extends SQLiteOpenHelper
         db.execSQL("drop table if exists "+TABLE_NAME);
         onCreate(db);
     }
+
+    public void close() {
+        if (db != null && db.isOpen()) {
+            try {
+                db.close();
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
+        }
+    }
+    public void open() {
+        try {
+            db = getWritableDatabase();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+    public boolean deleteNote(String where) {
+        return delete(TABLE_NAME, where);
+    }
+    public boolean delete(String table, String where) {
+        open();
+        long index = db.delete(table, where, null);
+        close();
+        return index > 0;
+    }
+
+
+
+
+
+
 
 
     public Cursor GetWordByID(int ID)
@@ -121,6 +155,18 @@ public class DBhelper extends SQLiteOpenHelper
         cont.put("fr", fr);
         cont.put("en", en);
         cont.put("domain", domain);
+        Cursor c=serchdom(domain);
+        if(c.getCount() != 0)
+            return false;
+         c=serchen(en);
+        if(c.getCount() != 0)
+            return false;
+         c=serchfr(fr);
+        if(c.getCount() != 0)
+            return false;
+
+
+
         long res = db.insert(TABLE_NAME, null, cont);
         if (res==-1)
           return   false;
@@ -128,8 +174,29 @@ public class DBhelper extends SQLiteOpenHelper
             return true;
 
     }
+    public Cursor serchfr(String s)
+    {
 
+        SQLiteDatabase db = this.getWritableDatabase();
+        Cursor result= db.rawQuery("Select * from "+TABLE_NAME+ " WHERE fr='"+s+"'",null);
+        return result;
 
+    }
+
+    public Cursor serchen(String s)
+    {
+
+        SQLiteDatabase db = this.getWritableDatabase();
+        Cursor result= db.rawQuery("Select * from "+TABLE_NAME+ " WHERE en='"+s+"'",null);
+        return result;
+    }
+    public Cursor serchdom(String s)
+    {
+
+        SQLiteDatabase db = this.getWritableDatabase();
+        Cursor result= db.rawQuery("Select * from "+TABLE_NAME+ " WHERE domain='"+s+"'",null);
+        return result;
+    }
 
 
 }
