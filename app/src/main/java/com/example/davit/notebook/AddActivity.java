@@ -25,6 +25,7 @@ public class AddActivity extends AppCompatActivity {
         dom = (EditText) findViewById(R.id.dom);
         fr = (EditText) findViewById(R.id.addfr);
         mydb = new DBhelper(context);
+
     }
 
     public void GoToMain(View v)
@@ -41,12 +42,12 @@ public class AddActivity extends AppCompatActivity {
         boolean addbd = false;
         if (en.getText().toString().length()==0)
         {
-            Context context = getApplicationContext();
+            Log.e("mtel a"," en-i 0 linelu mej     "+getApplicationContext());
             CharSequence text = "Word in english is required!";
-            int duration = Toast.LENGTH_SHORT;
-
-            Toast toast = Toast.makeText(context, text, duration);
-            toast.show();
+            //int duration = Toast.LENGTH_SHORT;
+            Toast.makeText(getBaseContext(),"Word in english is required!", Toast.LENGTH_LONG).show();
+            //Toast toast = Toast.makeText(this, text, duration);
+            //toast.show();
             ok=false;
         }
         else if (fr.getText().toString().length()==0)
@@ -59,7 +60,18 @@ public class AddActivity extends AppCompatActivity {
             toast.show();
 
             ok=false;
+        }else if (dom.getText().toString().length()==0)
+        {
+            Context context = getApplicationContext();
+            CharSequence text = "Domain is required!";
+            int duration = Toast.LENGTH_SHORT;
+
+            Toast toast = Toast.makeText(context, text, duration);
+            toast.show();
+
+            ok=false;
         }
+
         if(ok){
             addbd= mydb.AddWord(fr.getText().toString(),en.getText().toString(),dom.getText().toString());
             if (addbd) {
@@ -67,6 +79,13 @@ public class AddActivity extends AppCompatActivity {
                 en.setText("");
                 dom.setText("");
             }
+            else
+            {
+                Toast toast = Toast.makeText(getApplicationContext(), "errore in adding", Toast.LENGTH_SHORT);
+                toast.show();
+
+            }
+
         }
 
     }

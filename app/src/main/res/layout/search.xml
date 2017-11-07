@@ -29,12 +29,13 @@
 
     <Button
         android:text="search"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="90dp"
+        android:layout_height="40dp"
         android:id="@+id/button3"
         android:layout_alignParentTop="true"
         android:layout_alignParentEnd="true"
-        android:onClick="find"/>
+        android:onClick="find"
+        android:background="@drawable/button_back"/>
 
     <ListView
         android:layout_width="match_parent"
