@@ -15,8 +15,9 @@
     <LinearLayout
         android:orientation="horizontal"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
-
+        android:layout_height="match_parent"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentStart="true">
         <ListView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
@@ -47,7 +48,7 @@
                     android:text="A"
                     android:layout_height="wrap_content"
                     android:id="@+id/bA"
-                    android:textColor="@color/wite"
+                    android:textColor="@color/white"
                     android:background="@android:color/holo_green_light"
                     android:layout_width="match_parent"
                     android:layout_gravity="end"
@@ -56,7 +57,7 @@
                     android:text="B"
                     android:layout_height="wrap_content"
                     android:id="@+id/bB"
-                    android:textColor="@color/wite"
+                    android:textColor="@color/white"
                     android:layout_width="match_parent"
                     android:layout_gravity="end"
                     android:onClick="NeweLtter"
@@ -65,7 +66,7 @@
                     android:text="C"
                     android:layout_height="wrap_content"
                     android:id="@+id/bC"
-                    android:textColor="@color/wite"
+                    android:textColor="@color/white"
                     android:layout_width="match_parent"
                     android:layout_gravity="end"
                     android:onClick="NeweLtter"
@@ -74,7 +75,7 @@
                     android:text="D"
                     android:layout_height="wrap_content"
                     android:id="@+id/bD"
-                    android:textColor="@color/wite"
+                    android:textColor="@color/white"
                     android:layout_width="match_parent"
                     android:layout_gravity="end"
                     android:onClick="NeweLtter"
@@ -83,7 +84,7 @@
                     android:text="E"
                     android:layout_height="wrap_content"
                     android:id="@+id/bE"
-                    android:textColor="@color/wite"
+                    android:textColor="@color/white"
                     android:layout_width="match_parent"
                     android:layout_gravity="end"
                     android:onClick="NeweLtter"
@@ -92,7 +93,7 @@
                     android:text="F"
                     android:layout_height="wrap_content"
                     android:id="@+id/bF"
-                    android:textColor="@color/wite"
+                    android:textColor="@color/white"
                     android:layout_width="match_parent"
                     android:layout_gravity="end"
                     android:onClick="NeweLtter"
@@ -101,7 +102,7 @@
                     android:text="G"
                     android:layout_height="wrap_content"
                     android:id="@+id/bG"
-                    android:textColor="@color/wite"
+                    android:textColor="@color/white"
                     android:layout_width="match_parent"
                     android:layout_gravity="end"
                     android:onClick="NeweLtter"
@@ -110,7 +111,7 @@
                     android:text="H"
                     android:layout_height="wrap_content"
                     android:id="@+id/bH"
-                    android:textColor="@color/wite"
+                    android:textColor="@color/white"
                     android:layout_width="match_parent"
                     android:layout_gravity="end"
                     android:onClick="NeweLtter"
@@ -119,7 +120,7 @@
                     android:text="I"
                     android:layout_height="wrap_content"
                     android:id="@+id/bI"
-                    android:textColor="@color/wite"
+                    android:textColor="@color/white"
                     android:layout_width="match_parent"
                     android:layout_gravity="end"
                     android:onClick="NeweLtter"
@@ -131,7 +132,8 @@
                     android:layout_width="match_parent"
                     android:layout_gravity="end"
                     android:onClick="NeweLtter"
-                    android:background="@color/green" />
+                    android:background="@color/green"
+                    android:textColor="@color/white" />
                 <Button
                     android:text="K"
                     android:layout_height="wrap_content"
@@ -139,7 +141,8 @@
                     android:layout_width="match_parent"
                     android:layout_gravity="end"
                     android:onClick="NeweLtter"
-                    android:background="@color/colorPrimaryDark" />
+                    android:background="@color/colorPrimaryDark"
+                    android:textColor="@color/white" />
                 <Button
                     android:text="L"
                     android:layout_height="wrap_content"
@@ -147,7 +150,8 @@
                     android:layout_width="match_parent"
                     android:layout_gravity="end"
                     android:onClick="NeweLtter"
-                    android:background="@color/yallow" />
+                    android:background="@color/yallow"
+                    android:textColor="@color/white" />
                 <Button
                     android:text="M"
                     android:layout_height="wrap_content"
@@ -155,7 +159,8 @@
                     android:layout_width="match_parent"
                     android:layout_gravity="end"
                     android:onClick="NeweLtter"
-                    android:background="@android:color/holo_green_light" />
+                    android:background="@android:color/holo_green_light"
+                    android:textColor="@color/white" />
                 <Button
                     android:text="N"
                     android:layout_height="wrap_content"
@@ -163,7 +168,8 @@
                     android:layout_width="match_parent"
                     android:layout_gravity="end"
                     android:onClick="NeweLtter"
-                    android:background="@color/green" />
+                    android:background="@color/green"
+                    android:textColor="@color/white" />
                 <Button
                     android:text="O"
                     android:layout_height="wrap_content"
@@ -171,7 +177,8 @@
                     android:layout_width="match_parent"
                     android:layout_gravity="end"
                     android:onClick="NeweLtter"
-                    android:background="@color/colorPrimaryDark" />
+                    android:background="@color/colorPrimaryDark"
+                    android:textColor="@color/white" />
                 <Button
                     android:text="P"
                     android:layout_height="wrap_content"
@@ -179,7 +186,8 @@
                     android:layout_width="match_parent"
                     android:layout_gravity="end"
                     android:onClick="NeweLtter"
-                    android:background="@color/yallow" />
+                    android:background="@color/yallow"
+                    android:textColor="@color/white" />
                 <Button
                     android:text="Q"
                     android:layout_height="wrap_content"
@@ -187,7 +195,8 @@
                     android:layout_width="match_parent"
                     android:layout_gravity="end"
                     android:onClick="NeweLtter"
-                    android:background="@android:color/holo_green_light" />
+                    android:background="@android:color/holo_green_light"
+                    android:textColor="@color/white" />
                 <Button
                     android:text="R"
                     android:layout_height="wrap_content"
@@ -195,7 +204,8 @@
                     android:layout_width="match_parent"
                     android:layout_gravity="end"
                     android:onClick="NeweLtter"
-                    android:background="@color/green" />
+                    android:background="@color/green"
+                    android:textColor="@color/white" />
                 <Button
                     android:text="S"
                     android:layout_height="wrap_content"
@@ -203,7 +213,8 @@
                     android:layout_width="match_parent"
                     android:layout_gravity="end"
                     android:onClick="NeweLtter"
-                    android:background="@color/colorPrimaryDark" />
+                    android:background="@color/colorPrimaryDark"
+                    android:textColor="@color/white" />
                 <Button
                     android:text="T"
                     android:layout_height="wrap_content"
@@ -211,7 +222,8 @@
                     android:layout_width="match_parent"
                     android:layout_gravity="end"
                     android:onClick="NeweLtter"
-                    android:background="@color/yallow" />
+                    android:background="@color/yallow"
+                    android:textColor="@color/white" />
                 <Button
                     android:text="U"
                     android:layout_height="wrap_content"
@@ -219,7 +231,8 @@
                     android:layout_width="match_parent"
                     android:layout_gravity="end"
                     android:onClick="NeweLtter"
-                    android:background="@android:color/holo_green_light" />
+                    android:background="@android:color/holo_green_light"
+                    android:textColor="@color/white" />
                 <Button
                     android:text="V"
                     android:layout_height="wrap_content"
@@ -227,7 +240,8 @@
                     android:layout_width="match_parent"
                     android:layout_gravity="end"
                     android:onClick="NeweLtter"
-                    android:background="@color/green" />
+                    android:background="@color/green"
+                    android:textColor="@color/white" />
                 <Button
                     android:text="W"
                     android:layout_height="wrap_content"
@@ -235,7 +249,8 @@
                     android:layout_width="match_parent"
                     android:layout_gravity="end"
                     android:onClick="NeweLtter"
-                    android:background="@color/colorPrimaryDark" />
+                    android:background="@color/colorPrimaryDark"
+                    android:textColor="@color/white" />
                 <Button
                     android:text="X"
                     android:layout_height="wrap_content"
@@ -243,7 +258,8 @@
                     android:layout_width="match_parent"
                     android:layout_gravity="end"
                     android:onClick="NeweLtter"
-                    android:background="@color/yallow" />
+                    android:background="@color/yallow"
+                    android:textColor="@color/white" />
                 <Button
                     android:text="Y"
                     android:layout_height="wrap_content"
@@ -251,7 +267,8 @@
                     android:layout_width="match_parent"
                     android:layout_gravity="end"
                     android:onClick="NeweLtter"
-                    android:background="@android:color/holo_green_light" />
+                    android:background="@android:color/holo_green_light"
+                    android:textColor="@color/white" />
                 <Button
                     android:text="Z"
                     android:layout_height="wrap_content"
@@ -259,7 +276,8 @@
                     android:layout_width="match_parent"
                     android:layout_gravity="end"
                     android:onClick="NeweLtter"
-                    android:background="@color/green" />
+                    android:background="@color/green"
+                    android:textColor="@color/white" />
             </LinearLayout>
         </ScrollView>
     </LinearLayout>

@@ -21,7 +21,6 @@ public class Adapter extends BaseAdapter {
 
     private Cursor dataArray;
     private Activity activity;
-    private int Lenguige=4;
     public static LayoutInflater inflater = null;
 
     public Adapter(Cursor c, Activity a) {

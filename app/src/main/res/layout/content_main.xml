@@ -11,13 +11,32 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
     tools:context="com.example.davit.notebook.MainActivity"
-    tools:showIn="@layout/app_bar_main">
+    tools:showIn="@layout/app_bar_main"
+    android:background="@drawable/back">
 
     <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Hello World!"
-        android:id="@+id/txt"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:id="@+id/wordr"
+        android:layout_gravity="center"
+        android:layout_below="@+id/txt"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="188dp"
+        android:gravity="center"
+        android:textColor="@color/black"
+        android:textSize="25sp"
         />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/mainr"
+        android:id="@+id/txt"
+        android:gravity="center"
+        android:textSize="40sp"
+        android:layout_alignParentTop="true"
+        android:textColor="@color/black"
+        android:layout_alignParentStart="true" />
+
 
 </RelativeLayout>

@@ -59,7 +59,18 @@ public class AddActivity extends AppCompatActivity {
             toast.show();
 
             ok=false;
+        }else if (dom.getText().toString().length()==0)
+        {
+            Context context = getApplicationContext();
+            CharSequence text = "Domain is required!";
+            int duration = Toast.LENGTH_SHORT;
+
+            Toast toast = Toast.makeText(context, text, duration);
+            toast.show();
+
+            ok=false;
         }
+
         if(ok){
             addbd= mydb.AddWord(fr.getText().toString(),en.getText().toString(),dom.getText().toString());
             if (addbd) {
@@ -67,6 +78,13 @@ public class AddActivity extends AppCompatActivity {
                 en.setText("");
                 dom.setText("");
             }
+            else
+            {
+                Toast toast = Toast.makeText(getApplicationContext(), "errore in adding", Toast.LENGTH_SHORT);
+                toast.show();
+
+            }
+
         }
 
     }

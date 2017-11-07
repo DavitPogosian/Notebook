@@ -20,7 +20,7 @@ public class TestActivity extends AppCompatActivity {
     TextView fr2;
     TextView fr3;
     TextView fr4;
-    Button next;
+    Button next,back;
     Random r;
     int trueanswer;
     int wordID;
@@ -45,49 +45,73 @@ public class TestActivity extends AppCompatActivity {
         fr3=(TextView) findViewById(R.id.fr3);
         fr4=(TextView) findViewById(R.id.fr4);
         next=(Button) findViewById(R.id.next);
+        back=(Button) findViewById(R.id.back);
         Cursor res = mydb.GetNrOfWords();
         res.moveToFirst();
         Log.e("maximum nr","nr= "+res.getString(0));
         nr=Integer.parseInt(res.getString(0));
-        if (nr<3)
+        if (nr<4)
         {
             fr1.setVisibility(View.GONE);
             fr2.setVisibility(View.GONE);
             fr3.setVisibility(View.GONE);
             fr4.setVisibility(View.GONE);
             next.setVisibility(View.GONE);
-            en.setText("You need at least 3 words for test");
+            en.setText("You need at least 4 words for test");
         }
         else{
             r = new Random();
             trueanswer = r.nextInt(4) + 1;//1-4 true answer place
-            wordID=r.nextInt(nr)+1;
+            wordID = r.nextInt(nr) + 1;
             do {
                  answer1ID = r.nextInt(nr) + 1;
             }while (answer1ID == wordID);
             do {
                  answer2ID = r.nextInt(nr) + 1;
-            }while( (answer2ID == wordID) || (answer2ID == answer1ID));
+            }while( (answer2ID == wordID) || (answer2ID == answer1ID) );
             do {
                  answer3ID = r.nextInt(nr) + 1;
-            }while( (answer3ID == wordID) || (answer2ID == answer3ID) || (answer3ID == answer1ID));
+            }while( (answer3ID == wordID) || (answer2ID == answer3ID) || (answer3ID == answer1ID) );
 
-            res = mydb.GetWordByID(wordID);
-            res.moveToFirst();
-            worden=res.getString(1);
-            wordfr=res.getString(2);
 
-            res = mydb.GetWordByID(answer1ID);
-            res.moveToFirst();
-            answer1=res.getString(2);
+            res= mydb.GetAll();
 
-            res = mydb.GetWordByID(answer2ID);
-            res.moveToFirst();
-            answer2=res.getString(2);
+            int i=0;
+            while (res.moveToNext()) {
+                i++;
+                if (i==wordID)
+                {
+                    worden=res.getString(1);
+                    wordfr=res.getString(2);
+                }
+                else if(i==answer1ID)
+                {
+                    answer1=res.getString(2);
+                }else if(i==answer2ID)
+                {
+                    answer2=res.getString(2);
+                }else if(i==answer3ID)
+                {
+                    answer3=res.getString(2);
+                }
 
-            res = mydb.GetWordByID(answer3ID);
-            res.moveToFirst();
-            answer3=res.getString(2);
+            }
+//            res = mydb.GetWordByID(wordID);
+//            res.moveToFirst();
+//            worden=res.getString(1);
+//            wordfr=res.getString(2);
+//
+//            res = mydb.GetWordByID(answer1ID);
+//            res.moveToFirst();
+//            answer1=res.getString(2);
+//
+//            res = mydb.GetWordByID(answer2ID);
+//            res.moveToFirst();
+//            answer2=res.getString(2);
+//
+//            res = mydb.GetWordByID(answer3ID);
+//            res.moveToFirst();
+//            answer3=res.getString(2);
 
             en.setText(worden);
             switch (trueanswer)
@@ -127,6 +151,11 @@ public class TestActivity extends AppCompatActivity {
 
     }
 
+    public void Back (View v){
+        Intent go = new Intent(TestActivity.this, MainActivity.class);
+        startActivity(go);
+
+    }
     public void Check(View v)
     {
         fr1.setClickable(false);
