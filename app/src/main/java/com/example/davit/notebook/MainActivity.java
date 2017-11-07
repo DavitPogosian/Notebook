@@ -29,14 +29,7 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
-<<<<<<< HEAD
 import java.lang.reflect.Array;
-=======
-<<<<<<< HEAD
-import java.lang.reflect.Array;
-=======
->>>>>>> 8a78fc6b1e887313cbd868d61eab0a502ad4f456
->>>>>>> 1f87da8a3fb9b0b6889f368539353488ed6f7e79
 import java.util.Random;
 
 
@@ -59,10 +52,6 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         setContentView(R.layout.activity_main);
         isStoragePermissionGranted();
 
-<<<<<<< HEAD
-=======
-
->>>>>>> 1f87da8a3fb9b0b6889f368539353488ed6f7e79
 
         mydb = new DBhelper(context);
         t = (TextView) findViewById(R.id.txt);
@@ -99,10 +88,6 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
 
         Cursor res = mydb.GetNrOfWords();
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
->>>>>>> 1f87da8a3fb9b0b6889f368539353488ed6f7e79
         res.getCount();
         res.moveToNext();
         maxID = res.getInt(0);
@@ -119,9 +104,6 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             r = new Random();
 
              IDr = r.nextInt(maxID) + 1;
-<<<<<<< HEAD
-        }
-=======
         }
 
 
@@ -175,124 +157,9 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 //                t.setText(R.string.mainr);
 //                //t.setText(s);
 //            }
-=======
->>>>>>> 1f87da8a3fb9b0b6889f368539353488ed6f7e79
-
-        if (res.getCount() == 0) {
-
-            mydb.close();
-        } else {
-
-<<<<<<< HEAD
-        res = mydb.GetAll();
-
-        int i=0;
-        while (res.moveToNext()) {
-            i++;
-            if (i==IDr)
-            {
-                s = res.getString(1)+" "+res.getString(2);
-                t.setText(R.string.mainr);
-                wordr.setText(s);
-            }
-        }
-//        if (res.getCount() == 0) {
-//
-//            mydb.close();
-//        } else {
-//
-//            while (res.moveToNext()) {
-//              s = res.getString(1)+" "+res.getString(2);
-//               // Log.e("maxID", "maxID=" + maxID);
-//            }
-//            t.setText(R.string.mainr);
-//            wordr.setText(s);
-//        }
-
-//
-//            res = mydb.GetAll();
-//            if (res.getCount() == 0) {
-//
-//                mydb.close();
-//            } else {
-//
-//
-//                s = "";
-//                while (res.moveToNext()) {
-//                    s += res.getString(1).replaceAll(" ", "_");
-//                    ;//en
-//                    s += " " + res.getString(2).replaceAll(" ", "_");
-//                    ;//fr
-//                    //s += " " + res.getString(0);//id
-//                    s += " " + res.getString(3).replaceAll(" ", "_");//dom
-//                    s += "\n";
-//
-//
-//                }
-//
-//
-//                t.setText(R.string.mainr);
-//                //t.setText(s);
-//            }
-=======
-            while (res.moveToNext()) {
-                maxID = res.getInt(0);
-                Log.e("maxID", "maxID=" + maxID);
-            }
-            r = new Random();
-             IDr = r.nextInt(maxID) + 1;
-        }
-        res = mydb.GetWordByID(IDr);
-
-        if (res.getCount() == 0) {
-
-            mydb.close();
-        } else {
-
-            while (res.moveToNext()) {
-              s = res.getString(1)+" "+res.getString(2);
-               // Log.e("maxID", "maxID=" + maxID);
-            }
-            t.setText(R.string.mainr);
-            wordr.setText(s);
->>>>>>> 8a78fc6b1e887313cbd868d61eab0a502ad4f456
->>>>>>> 1f87da8a3fb9b0b6889f368539353488ed6f7e79
         }
 
-//
-//            res = mydb.GetAll();
-//            if (res.getCount() == 0) {
-//
-//                mydb.close();
-//            } else {
-//
-//
-//                s = "";
-//                while (res.moveToNext()) {
-//                    s += res.getString(1).replaceAll(" ", "_");
-//                    ;//en
-//                    s += " " + res.getString(2).replaceAll(" ", "_");
-//                    ;//fr
-//                    //s += " " + res.getString(0);//id
-//                    s += " " + res.getString(3).replaceAll(" ", "_");//dom
-//                    s += "\n";
-//
-//
-//                }
-//
-//
-//                t.setText(R.string.mainr);
-//                //t.setText(s);
-//            }
-        }
 
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-=======
-
->>>>>>> 8a78fc6b1e887313cbd868d61eab0a502ad4f456
->>>>>>> 1f87da8a3fb9b0b6889f368539353488ed6f7e79
     @Override
     public void onBackPressed() {
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
@@ -363,10 +230,6 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     }
 
 
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
->>>>>>> 1f87da8a3fb9b0b6889f368539353488ed6f7e79
     public void ImportDB(String[] inputsplit)
     {
         String[][] input =new String[inputsplit.length][];
@@ -409,25 +272,11 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         else { //permission is automatically granted on sdk<23 upon installation
             Log.v("Permission","Permission is granted");
             return true;
-<<<<<<< HEAD
-=======
-=======
-    public void ImportDB(String[][] inputsplit)
-    {
-        for(int i=0; i < inputsplit.length; i++)
-        {
-            mydb.AddWord(inputsplit[i][1].replaceAll("_", " "),inputsplit[i][0].replaceAll("_", " "),inputsplit[i][2].replaceAll("_", " "));//fr//en//dom
->>>>>>> 8a78fc6b1e887313cbd868d61eab0a502ad4f456
->>>>>>> 1f87da8a3fb9b0b6889f368539353488ed6f7e79
         }
     }
 
     public void exportDB() {
 
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
->>>>>>> 1f87da8a3fb9b0b6889f368539353488ed6f7e79
 
 //        File dir = new File(path);
 //        dir.mkdirs();
@@ -452,15 +301,6 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                 }
 
             String[] saveText = all.split(System.getProperty("line.separator"));//new String[0];// = String.valueOf(editText.getText()).split(System.getProperty("line.separator"));
-<<<<<<< HEAD
-=======
-=======
-//        File dir = new File(path);
-//        dir.mkdirs();
-//        File file = new File(path + "/Database.txt");
-        String[] saveText = s.split(System.getProperty("line.separator"));//new String[0];// = String.valueOf(editText.getText()).split(System.getProperty("line.separator"));
->>>>>>> 8a78fc6b1e887313cbd868d61eab0a502ad4f456
->>>>>>> 1f87da8a3fb9b0b6889f368539353488ed6f7e79
 //        Cursor res = mydb.GetAll();
 //        if (res.getCount() == 0) {
 //
@@ -478,10 +318,6 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 //            }
 
             //editText.setText("");
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
->>>>>>> 1f87da8a3fb9b0b6889f368539353488ed6f7e79
             for (int i = 0; i < saveText.length; i++)
                 Log.e("" + i + "\t", "" + saveText[i]);
             DBtoTXT db = new DBtoTXT();
@@ -493,23 +329,4 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
         }
     }
-<<<<<<< HEAD
-=======
-=======
-        for(int i=0;i<saveText.length; i++)
-        Log.e(""+i+"\t",""+saveText[i]);
-        DBtoTXT db=new DBtoTXT();
-        db.Export(saveText);
-
-            Toast.makeText(getApplicationContext(), "Saved", Toast.LENGTH_LONG).show();
-
-           // Save(file, saveText);
-
-        }
-
-
-
-
->>>>>>> 8a78fc6b1e887313cbd868d61eab0a502ad4f456
->>>>>>> 1f87da8a3fb9b0b6889f368539353488ed6f7e79
 }

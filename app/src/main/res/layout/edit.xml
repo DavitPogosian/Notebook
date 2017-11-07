@@ -61,15 +61,7 @@
         android:layout_marginBottom="20dp"
         android:id="@+id/textView"
         android:textColor="@color/black"
-<<<<<<< HEAD
         android:textSize="16sp"/>
-=======
-<<<<<<< HEAD
-        android:textSize="16sp"/>
-=======
-        android:textSize="16dp"/>
->>>>>>> 8a78fc6b1e887313cbd868d61eab0a502ad4f456
->>>>>>> 1f87da8a3fb9b0b6889f368539353488ed6f7e79
 
 
     <TextView
@@ -81,15 +73,7 @@
         android:layout_above="@+id/addfr"
         android:layout_alignStart="@+id/textView"
         android:textColor="@color/black"
-<<<<<<< HEAD
         android:textSize="16sp"/>
-=======
-<<<<<<< HEAD
-        android:textSize="16sp"/>
-=======
-        android:textSize="16dp"/>
->>>>>>> 8a78fc6b1e887313cbd868d61eab0a502ad4f456
->>>>>>> 1f87da8a3fb9b0b6889f368539353488ed6f7e79
 
 
     <TextView
@@ -101,31 +85,9 @@
         android:layout_alignStart="@+id/textView2"
         android:layout_marginTop="54dp"
         android:textColor="@color/black"
-<<<<<<< HEAD
         android:textSize="16sp"/>
 
 
-=======
-<<<<<<< HEAD
-        android:textSize="16sp"/>
-
-
-=======
-        android:textSize="16dp"/>
-
-
-    <Button
-        android:text="Edit"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/button2"
-        android:onClick="edit"
-        android:background="@android:color/holo_green_dark"
-        android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true" />
-
->>>>>>> 8a78fc6b1e887313cbd868d61eab0a502ad4f456
->>>>>>> 1f87da8a3fb9b0b6889f368539353488ed6f7e79
     <ImageView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -150,10 +112,6 @@
         android:clickable="true"
         android:onClick="speek"/>
 
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
->>>>>>> 1f87da8a3fb9b0b6889f368539353488ed6f7e79
     <ImageView
         android:layout_width="40dp"
         android:layout_height="65dp"
@@ -175,10 +133,5 @@
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true" />
 
-<<<<<<< HEAD
-=======
-=======
->>>>>>> 8a78fc6b1e887313cbd868d61eab0a502ad4f456
->>>>>>> 1f87da8a3fb9b0b6889f368539353488ed6f7e79
 
 </RelativeLayout>

@@ -1,53 +1,16 @@
-<?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorPrimary">#3f51b5</color>
+    <string name="app_name">Notebook</string>
 
-<<<<<<< HEAD
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
     <string name="action_settings">Settings</string>
-<<<<<<< HEAD
-=======
-=======
-    <color name="colorPrimaryDark">#235b10</color>
-    <color name="colorAccent">#FF4081</color>
-    <color name="green">#eabf13</color>
-    <color name="red">#de1c19</color>
-    <color name="yallow">#3aa96a</color>
-    <color name="wite">#ffffff</color>
-    <color name="black">#000000</color>
-
-
-<<<<<<< HEAD
->>>>>>> 8a78fc6b1e887313cbd868d61eab0a502ad4f456
->>>>>>> 1f87da8a3fb9b0b6889f368539353488ed6f7e79
     <string name="nameEn">In english</string>
     <string name="nameFr">In french</string>
     <string name="domain">Domain</string>
     <string name="mainr">Word to learn</string>
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-=======
-
->>>>>>> 8a78fc6b1e887313cbd868d61eab0a502ad4f456
->>>>>>> 1f87da8a3fb9b0b6889f368539353488ed6f7e79
     <string name="Backup_data">Backup data</string>
     <string name="import_data">Import data</string>
     <string name="backup_before_import">Do you want backup curren database before import an old databas?</string>
     <string name="select_file">Select file</string>
     <string name="backup_empty">Backup file is empty</string>
-<<<<<<< HEAD
-=======
 </resources>
-=======
-
-
-
-    <color name="primary">#4CAF50</color>
-    <color name="text_primary">#000000</color>
-    <color name="primary_dark">#388E3C</color>
-    <color name="white">#ffffff</color>
->>>>>>> 1f87da8a3fb9b0b6889f368539353488ed6f7e79
-</resources>
->>>>>>> a2809054e1d463b6b55a7d1ff23f3e41860ed6f8
