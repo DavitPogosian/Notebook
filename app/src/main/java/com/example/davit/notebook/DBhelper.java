@@ -95,7 +95,7 @@ public class DBhelper extends SQLiteOpenHelper
         }
         else
         {
-          //  Log.d("from DBhalper.DeletProduct","r.getCount()= "+r.getCount());
+            //  Log.d("from DBhalper.DeletProduct","r.getCount()= "+r.getCount());
         }
 
 
@@ -146,7 +146,7 @@ public class DBhelper extends SQLiteOpenHelper
     public Cursor GetWordByLetterInEn(String letter)
     {
         SQLiteDatabase db = this.getWritableDatabase();
-     //   SELECT * FROM Customers where CustomerName like 'a%';
+        //   SELECT * FROM Customers where CustomerName like 'a%';
         Cursor result= db.rawQuery("Select * from "+TABLE_NAME+ " WHERE en like'"+letter+"%'",null);
         return result;
 
@@ -156,11 +156,16 @@ public class DBhelper extends SQLiteOpenHelper
     {
         fr=fr.toLowerCase();
         en=en.toLowerCase();
+<<<<<<< HEAD
         //domain=domain.toLowerCase();
+=======
+        domain=domain.toLowerCase();
+>>>>>>> 8a78fc6b1e887313cbd868d61eab0a502ad4f456
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues cont = new ContentValues();
         cont.put("fr", fr);
         cont.put("en", en);
+<<<<<<< HEAD
         if(domain!=null)
         cont.put("domain", domain.toLowerCase());
         Cursor c;
@@ -171,6 +176,23 @@ public class DBhelper extends SQLiteOpenHelper
         if(c.getCount() != 0)
             return false;
          c=serchfr(fr);
+=======
+        cont.put("domain", domain);
+        Cursor c=serchdom(domain);
+        if(c.getCount() != 0)
+            return false;
+<<<<<<< HEAD
+         c=serchen(en);
+        if(c.getCount() != 0)
+            return false;
+         c=serchfr(fr);
+=======
+        c=serchen(en);
+        if(c.getCount() != 0)
+            return false;
+        c=serchfr(fr);
+>>>>>>> a2809054e1d463b6b55a7d1ff23f3e41860ed6f8
+>>>>>>> 8a78fc6b1e887313cbd868d61eab0a502ad4f456
         if(c.getCount() != 0)
             return false;
 
@@ -178,14 +200,43 @@ public class DBhelper extends SQLiteOpenHelper
 
         long res = db.insert(TABLE_NAME, null, cont);
         if (res==-1)
-          return   false;
+            return   false;
         else
             return true;
 
     }
     public Cursor serchfr(String s)
     {
+<<<<<<< HEAD
 
+        s=s.toLowerCase();
+        SQLiteDatabase db = this.getWritableDatabase();
+        Cursor result= db.rawQuery("Select * from "+TABLE_NAME+ " WHERE fr like'"+s+"%'",null);
+
+        return result;
+
+=======
+
+<<<<<<< HEAD
+        SQLiteDatabase db = this.getWritableDatabase();
+        Cursor result= db.rawQuery("Select * from "+TABLE_NAME+ " WHERE fr='"+s+"'",null);
+        return result;
+
+    }
+
+    public Cursor serchen(String s)
+    {
+
+        SQLiteDatabase db = this.getWritableDatabase();
+        Cursor result= db.rawQuery("Select * from "+TABLE_NAME+ " WHERE en='"+s+"'",null);
+        return result;
+    }
+    public Cursor serchdom(String s)
+    {
+
+        SQLiteDatabase db = this.getWritableDatabase();
+        Cursor result= db.rawQuery("Select * from "+TABLE_NAME+ " WHERE domain='"+s+"'",null);
+=======
         s=s.toLowerCase();
         SQLiteDatabase db = this.getWritableDatabase();
         Cursor result= db.rawQuery("Select * from "+TABLE_NAME+ " WHERE fr like'"+s+"%'",null);
@@ -208,6 +259,29 @@ public class DBhelper extends SQLiteOpenHelper
 
         SQLiteDatabase db = this.getWritableDatabase();
         Cursor result= db.rawQuery("Select * from "+TABLE_NAME+ " WHERE domain like'"+s+"%'",null);
+>>>>>>> a2809054e1d463b6b55a7d1ff23f3e41860ed6f8
+        return result;
+>>>>>>> 8a78fc6b1e887313cbd868d61eab0a502ad4f456
+    }
+
+    public Cursor serchen(String s)
+    {
+
+<<<<<<< HEAD
+        s=s.toLowerCase();
+        SQLiteDatabase db = this.getWritableDatabase();
+        Cursor result= db.rawQuery("Select * from "+TABLE_NAME+ " WHERE en like'"+s+"%'",null);
+        return result;
+    }
+    public Cursor serchdom(String s)
+    {
+        s=s.toLowerCase();
+
+        SQLiteDatabase db = this.getWritableDatabase();
+        Cursor result= db.rawQuery("Select * from "+TABLE_NAME+ " WHERE domain like'"+s+"%'",null);
         return result;
     }
 }
+=======
+}
+>>>>>>> 8a78fc6b1e887313cbd868d61eab0a502ad4f456

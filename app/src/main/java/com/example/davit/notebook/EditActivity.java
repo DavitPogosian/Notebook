@@ -1,9 +1,13 @@
 package com.example.davit.notebook;
 
+<<<<<<< HEAD
 import android.app.AlertDialog;
 import android.app.Dialog;
 import android.content.Context;
 import android.content.DialogInterface;
+=======
+import android.content.Context;
+>>>>>>> 8a78fc6b1e887313cbd868d61eab0a502ad4f456
 import android.content.Intent;
 import android.database.Cursor;
 import android.speech.tts.TextToSpeech;
@@ -59,7 +63,11 @@ public class EditActivity extends AppCompatActivity {
             public void onInit(int status) {
                 if(status!= TextToSpeech.ERROR)
                 {
+<<<<<<< HEAD
                     ttsEN.setLanguage(Locale.UK);
+=======
+                    ttsFR.setLanguage(Locale.UK);
+>>>>>>> 8a78fc6b1e887313cbd868d61eab0a502ad4f456
                 }
 
             }
@@ -115,6 +123,7 @@ public class EditActivity extends AppCompatActivity {
 
             ok=false;
         }
+<<<<<<< HEAD
         else if (dom.getText().toString().length()==0)
         {
             Context context = getApplicationContext();
@@ -124,6 +133,8 @@ public class EditActivity extends AppCompatActivity {
             toast.show();
             ok=false;
         }
+=======
+>>>>>>> 8a78fc6b1e887313cbd868d61eab0a502ad4f456
         if(ok){
            mydb.EditWordByID(id,fr.getText().toString(),en.getText().toString(),dom.getText().toString());
             Intent go = new Intent(getApplicationContext(), MainActivity.class);
@@ -131,6 +142,7 @@ public class EditActivity extends AppCompatActivity {
         }
 
     }
+<<<<<<< HEAD
     public void delete(View v)
     {
         showDialog(1);
@@ -166,4 +178,6 @@ public class EditActivity extends AppCompatActivity {
     }
 
 
+=======
+>>>>>>> 8a78fc6b1e887313cbd868d61eab0a502ad4f456
     }

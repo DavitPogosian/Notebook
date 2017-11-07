@@ -90,11 +90,16 @@
 
     <Button
         android:text="Next"
+<<<<<<< HEAD
         android:layout_width="110dp"
+=======
+        android:layout_width="wrap_content"
+>>>>>>> 8a78fc6b1e887313cbd868d61eab0a502ad4f456
         android:layout_height="wrap_content"
         android:id="@+id/next"
         android:onClick="Next"
         android:layout_alignParentBottom="true"
+<<<<<<< HEAD
         android:layout_alignParentEnd="true"
         android:background="@drawable/button_back" />
 
@@ -102,11 +107,22 @@
     <Button
         android:text="Back"
         android:layout_width="110dp"
+=======
+        android:layout_alignParentEnd="true" />
+
+    <Button
+        android:text="Back"
+        android:layout_width="wrap_content"
+>>>>>>> 8a78fc6b1e887313cbd868d61eab0a502ad4f456
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_alignParentStart="true"
         android:id="@+id/back"
+<<<<<<< HEAD
         android:onClick="Back"
         android:background="@drawable/button_back"/>
+=======
+        android:onClick="Back"/>
+>>>>>>> 8a78fc6b1e887313cbd868d61eab0a502ad4f456
 
 </RelativeLayout>

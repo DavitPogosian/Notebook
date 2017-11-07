@@ -23,6 +23,7 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStreamReader;
 public class DBtoTXT {
+<<<<<<< HEAD
     String path = Environment.getExternalStorageDirectory().getAbsolutePath() + "/NotebookDB";
    // String[][] inputsplit;
 
@@ -62,6 +63,31 @@ public class DBtoTXT {
             }
         }
         return loadText;
+=======
+    public String path = Environment.getExternalStorageDirectory().getAbsolutePath() + "/Tutorial";
+
+
+    public String[][] Import(){
+        File file = new File (path + "/savedFile.txt");
+        String [] loadText = Load(file);
+
+        String finalString = "";
+
+        String []input=null;
+        for (int i = 0; i < loadText.length; i++)
+        {
+            //finalString += loadText[i] + System.getProperty("line.separator");
+            Log.e("loaded i",""+loadText[i] + System.getProperty("line.separator"));
+            input[i]=loadText[i] + System.getProperty("line.separator");
+        }
+        String[][] inputsplit=null;
+        for(int i=0; i < loadText.length; i++)
+        {
+         //to do bajanel prabelnerov
+        }
+        //DBhelper mydb=new DBhelper(getApplicationContext());
+        return inputsplit;
+>>>>>>> 8a78fc6b1e887313cbd868d61eab0a502ad4f456
     }
 
 

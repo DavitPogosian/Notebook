@@ -17,5 +17,13 @@
     <color name="primary">#4CAF50</color>
     <color name="text_primary">#000000</color>
     <color name="primary_dark">#388E3C</color>
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+    <color name="white">#FFFFFF</color>
+</resources>
+=======
+>>>>>>> 8a78fc6b1e887313cbd868d61eab0a502ad4f456
     <color name="white">#ffffff</color>
 </resources>
+>>>>>>> a2809054e1d463b6b55a7d1ff23f3e41860ed6f8
